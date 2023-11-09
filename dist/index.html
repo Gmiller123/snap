@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="h-screen w-screen">
+    <header class="bg-white fixed w-full">
+      <nav
+        class="container mx-auto py-5 flex items-center justify-between max-sm:px-4"
+      >
+        <img
+          class="mt-2"
+          src="/intro-section-with-dropdown-navigation-main/images/logo.svg"
+          alt=""
+        />
+
+        <div
+          id="nav-lists"
+          class="absolute top-[84px] lg:flex left-0 w-full hidden items-center justify-center lg:static"
+        >
+          <ul
+            class="flex gap-5 lg:gap-10 lg:flex-row flex-col font-bold max-sm:justify-end text-xl tracking-wide text-gray-600 uppercase space-y-4 p-10 bg-white z-40"
+          >
+            <button
+              id="btn"
+              class="flex items-center justify-center gap-3 relative uppercase"
+            >
+              <a href="#" class="">Features</a>
+              <img
+                class="w-4"
+                src="/intro-section-with-dropdown-navigation-main/images/icon-arrow-down.svg"
+                alt=""
+              />
+
+              <ul
+                id="dropdown"
+                class="absolute top-[45px] right-0 bg-gray-300 text-gray-600 w-[250px] hidden space-y-4 p-4 rounded-xl z-50"
+              >
+                <li class="text-left space-x-2">
+                  <i class="fa-brands fa-wordpress"></i
+                  ><a href="">Responsive</a>
+                </li>
+                <li class="text-left space-x-2">
+                  <i class="fa-brands fa-discord"></i
+                  ><a href="">Multi-tasking</a>
+                </li>
+                <li class="text-left space-x-2">
+                  <i class="fa-solid fa-poo"></i
+                  ><a class="whitespace-nowrap" href="">Multi-rendering</a>
+                </li>
+              </ul>
+            </button>
+            <button
+              class="flex items-center justify-center gap-3 uppercase m-0 p-0"
+              style="margin: 0"
+            >
+              <a class="m-0 p-0" href="#">Company</a>
+              <img
+                class="w-4 m-0 p-0"
+                src="/intro-section-with-dropdown-navigation-main/images/icon-arrow-down.svg"
+                alt=""
+              />
+            </button>
+            <li
+              class="flex items-center justify-center gap-3"
+              style="margin: 0"
+            >
+              <a href="#">Contact</a>
+            </li>
+            <li
+              class="flex items-center justify-center gap-3"
+              style="margin: 0"
+            >
+              <a href="#">Testimonial</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex items-center justify-center gap-4">
+          <div class="flex gap-6 max-sm:gap-2 text-xl">
+            <button>Login</button>
+            <button
+              class="border-2 border-black px-4 py-2 rounded-2xl hover:text-white hover:bg-black outline-none"
+            >
+              Register
+            </button>
+          </div>
+
+          <div id="toggle" class="lg:hidden cursor-pointer">
+            <i class="fa-solid fa-bars fa-2xl"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="grid lg:grid-cols-2 pt-24">
+      <div
+        class="p-5 flex items-start justify-center flex-col space-y-20 w-[60%] max-md:w-full mx-auto"
+      >
+        <h1
+          class="lg:text-[80px] md:text-[70px] text-[60px] leading-none font-black"
+        >
+          Make <br />
+          remote work
+        </h1>
+        <p class="text-lg opacity-80 -z-10">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          nesciunt totam in sunt vero placeat sequi illo quasi eum omnis,quam
+          aspernatur.
+        </p>
+        <button
+          class="border-2 border-black px-4 py-2 font-bold text-lg rounded-2xl hover:text-white hover:bg-black"
+        >
+          Learn More
+        </button>
+        <div
+          class="flex items-center justify-center gap-6 max-sm:flex-col max-sm:w-[100%]"
+        >
+          <img
+            src="/intro-section-with-dropdown-navigation-main/images/client-audiophile.svg"
+            alt=""
+            class="max-sm:w-[25%]"
+          />
+          <img
+            src="/intro-section-with-dropdown-navigation-main/images/client-databiz.svg"
+            alt=""
+            class="max-sm:w-[25%]"
+          />
+          <img
+            src="/intro-section-with-dropdown-navigation-main/images/client-maker.svg"
+            alt=""
+            class="max-sm:w-[25%]"
+          />
+          <img
+            src="/intro-section-with-dropdown-navigation-main/images/client-meet.svg"
+            alt=""
+            class="max-sm:w-[25%]"
+            v
+          />
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <img
+          class="h-[80%] max-md:h-[60%] lg:max-w-[60%] object-contain"
+          src="/intro-section-with-dropdown-navigation-main/images/image-hero-desktop.png"
+          alt=""
+        />
+      </div>
+    </main>
+
+    <script>
+      const navList = document.querySelector("#nav-lists");
+      const toggleBtn = document.querySelector("#toggle");
+
+      toggleBtn.addEventListener("click", () => {
+        navList.classList.toggle("hidden");
+      });
+
+      const btn = document.querySelector("#btn");
+      const dropdownMenu = document.querySelector("#dropdown");
+
+      btn.addEventListener("click", () => {
+        if (dropdownMenu.classList.contains("hidden")) {
+          dropdownMenu.classList.remove("hidden");
+        } else {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
